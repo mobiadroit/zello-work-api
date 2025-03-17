@@ -1,0 +1,16 @@
+{
+    "name": "mobiadroit/zello-work-api",
+    "description": "Composer package for ZelloWork API",
+    "autoload": {
+        "psr-4": {
+            "Mobiadroit\\ZelloWorkApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Blake Krone",
+            "email": "hello@mobiadroit.com"
+        }
+    ],
+    "require": {}
+}
