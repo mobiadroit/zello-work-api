@@ -319,6 +319,32 @@ class ZelloServerAPI {
 		return $this->callAPI($url, $data);
 	}
 
+	/**
+	 * Gets the list of the users or detailed information regarding a particular user.
+	 * @param $username {String} username of the user, for which the details are requested, if omitted users list is returned.
+	 * @param $filter {String} filter criteria to apply to results. By default, only active users (reports within the last 20 minutes) within the given geographic bounds will be returned.
+	 * @param $max {Integer} maximum number of results to fetch
+	 * @param $start {Integer} start index of results to fetch
+	 * @return {Boolean} operation success result
+	 */
+	function getLocations($name = "", $filter = "", $max = 0, $start = 0){
+		$url = "location/get";
+		if ($name) {
+			$data .= "&name=".urlencode($name); 
+		}
+		if ($filter) {
+			$data .= "&filter/".urlencode($filter);
+		}
+		if ($max) {
+			$data .= "&max=".$max;
+		}
+		if ($start) {
+			$data .= "&start=".$start;
+		}
+		$data .= "&northeast[]=49.60663170392225&northeast[]=-52.047907745733085&southwest[]=19.859763722017913&southwest[]=-128.79805645790591";
+		return $this->callAPI($url,$data);
+	}
+
 	private function verifyRequirements() {
 		if (!function_exists("json_decode") || !function_exists("json_encode")) {
 			$this->errorCode = 1000;
