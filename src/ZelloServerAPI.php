@@ -329,6 +329,7 @@ class ZelloServerAPI {
 	 */
 	function getLocations($name = "", $filter = "", $max = 0, $start = 0){
 		$url = "location/get";
+		$data = '';
 		if ($name) {
 			$data .= "&name=".urlencode($name); 
 		}
