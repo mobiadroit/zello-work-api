@@ -3,7 +3,7 @@
     "description": "Composer package for ZelloWork API",
     "autoload": {
         "psr-4": {
-            "Mobiadroit\\ZelloWorkApi\\": "src/"
+            "Mobiadroit\\ZelloWorkAPI\\": "src/"
         }
     },
     "authors": [
